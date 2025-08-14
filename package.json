@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "postbuild": "cp src/popup/popup.html dist/ && cp src/options/options.html dist/ && rm -rf dist/src dist/index.js dist/index.js.map",
     "build:watch": "vite build --watch",
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.tsx",
@@ -36,7 +37,7 @@
     "lint-staged": "^16.1.5",
     "prettier": "^3.3.3",
     "typescript": "^5.7.2",
-    "vite": "^7.1.2"
+    "vite": "^5.4.19"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
