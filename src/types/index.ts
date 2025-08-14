@@ -27,6 +27,8 @@ export interface ActionPreferences {
   preferredCurrency: string;
   preferredUnits: 'metric' | 'imperial';
   translationTarget: string;
+  notePlatform: 'notion' | 'evernote' | 'onenote' | 'google-keep' | 'todoist' | 'trello' | 'asana' | 'google-docs' | 'dropbox-paper';
+  sharePlatform: 'twitter' | 'facebook' | 'linkedin' | 'whatsapp' | 'reddit' | 'pinterest' | 'tumblr' | 'email';
 }
 
 export interface PrivacyPreferences {
@@ -37,10 +39,11 @@ export interface PrivacyPreferences {
 }
 
 export interface AppearancePreferences {
-  theme: 'light' | 'dark' | 'auto';
+  theme: 'light' | 'dark' | 'auto' | 'high-contrast';
   compactMode: boolean;
   showIcons: boolean;
   customColors: boolean;
+  largeText: boolean;
 }
 
 export interface UsageStats {
@@ -91,7 +94,9 @@ export enum ActionType {
   SEARCH = 'search',
   CONVERT = 'convert',
   TRANSLATE = 'translate',
-  DEFINE = 'define'
+  DEFINE = 'define',
+  QUICK_NOTE = 'quick_note',
+  SHARE = 'share'
 }
 
 export interface ActionContext {

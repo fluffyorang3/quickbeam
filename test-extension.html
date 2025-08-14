@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBeam - Test Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        
+        .test-section h2 {
+            color: #1a73e8;
+            margin-top: 0;
+        }
+        
+        .test-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #1a73e8;
+        }
+        
+        .test-item h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .test-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        
+        .status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+        }
+        
+        .status.success {
+            background: #4caf50;
+        }
+        
+        .status.error {
+            background: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>QuickBeam - Test Page</h1>
+    
+    <div class="instructions">
+        <h3>Testing Instructions</h3>
+        <p><strong>1.</strong> Make sure the Chrome extension is loaded and enabled</p>
+        <p><strong>2.</strong> Select any text in the test items below</p>
+        <p><strong>3.</strong> The toolbar should appear with context-appropriate actions</p>
+        <p><strong>4.</strong> Test each action to ensure it works correctly</p>
+    </div>
+
+    <div class="test-section">
+        <h2>📍 Address Recognition Tests</h2>
+        
+        <div class="test-item">
+            <h3>US Address</h3>
+            <p>Select this address: <span class="highlight">123 Main Street, New York, NY 10001</span></p>
+            <p><strong>Expected Action:</strong> "Map It" button should appear</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>International Address</h3>
+            <p>Select this address: <span class="highlight">10 Downing Street, London, UK</span></p>
+            <p><strong>Expected Action:</strong> "Map It" button should appear</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📧 Email Tests</h2>
+        
+        <div class="test-item">
+            <h3>Email Address</h3>
+            <p>Select this email: <span class="highlight">john.doe@example.com</span></p>
+            <p><strong>Expected Action:</strong> "Compose Email" button should appear</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>Email with Name</h3>
+            <p>Select this text: <span class="highlight">Contact us at support@company.com</span></p>
+            <p><strong>Expected Action:</strong> "Compose Email" button should appear</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📞 Phone Number Tests</h2>
+        
+        <div class="test-item">
+            <h3>US Phone Number</h3>
+            <p>Select this phone: <span class="highlight">(555) 123-4567</span></p>
+            <p><strong>Expected Actions:</strong> "Call" and "Message" buttons should appear</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>International Phone</h3>
+            <p>Select this phone: <span class="highlight">+1-555-123-4567</span></p>
+            <p><strong>Expected Actions:</strong> "Call" and "Message" buttons should appear</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📦 Tracking Number Tests</h2>
+        
+        <div class="test-item">
+            <h3>UPS Tracking</h3>
+            <p>Select this number: <span class="highlight">1Z999AA10123456784</span></p>
+            <p><strong>Expected Action:</strong> "Track Package" button should appear</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>FedEx Tracking</h3>
+            <p>Select this number: <span class="highlight">123456789012</span></p>
+            <p><strong>Expected Action:</strong> "Track Package" button should appear</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📅 Date & Time Tests</h2>
+        
+        <div class="test-item">
+            <h3>Date</h3>
+            <p>Select this date: <span class="highlight">December 25, 2024</span></p>
+            <p><strong>Expected Action:</strong> "Add to Calendar" button should appear (if AI parsing enabled)</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>Time</h3>
+            <p>Select this time: <span class="highlight">3:30 PM</span></p>
+            <p><strong>Expected Action:</strong> "Add to Calendar" button should appear (if AI parsing enabled)</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>💰 Currency & Unit Tests</h2>
+        
+        <div class="test-item">
+            <h3>Currency Amount</h3>
+            <p>Select this amount: <span class="highlight">$150.00</span></p>
+            <p><strong>Expected Action:</strong> "Convert" button should appear</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>Unit Conversion</h3>
+            <p>Select this measurement: <span class="highlight">25 kg</span></p>
+            <p><strong>Expected Action:</strong> "Convert" button should appear</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔍 Universal Actions Tests</h2>
+        
+        <div class="test-item">
+            <h3>Copy Action</h3>
+            <p>Select any text above and look for the <span class="highlight">"Copy"</span> button</p>
+            <p><strong>Expected Action:</strong> "Copy" button should always appear</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>Search Action</h3>
+            <p>Select any text above and look for the <span class="highlight">"Search"</span> button</p>
+            <p><strong>Expected Action:</strong> "Search" button should always appear</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🌐 Translation & Definition Tests</h2>
+        
+        <div class="test-item">
+            <h3>Translation</h3>
+            <p>Select this text: <span class="highlight">Hello world</span></p>
+            <p><strong>Expected Action:</strong> "Translate" button should appear</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>Definition</h3>
+            <p>Select this word: <span class="highlight">serendipity</span></p>
+            <p><strong>Expected Action:</strong> "Define" button should appear</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>⚙️ Extension Settings Test</h2>
+        
+        <div class="test-item">
+            <h3>Options Page</h3>
+            <p><strong>Action:</strong> Right-click the extension icon and select "Options"</p>
+            <p><strong>Expected Result:</strong> Options page should open with working preferences</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>Action Toggle</h3>
+            <p><strong>Action:</strong> Disable "Map It" action in options, then test address selection</p>
+            <p><strong>Expected Result:</strong> "Map It" button should not appear</p>
+        </div>
+    </div>
+
+    <script>
+        // Test status indicator
+        function showStatus(message, type = 'success') {
+            const status = document.createElement('div');
+            status.className = `status ${type}`;
+            status.textContent = message;
+            document.body.appendChild(status);
+            
+            setTimeout(() => {
+                if (status.parentNode) {
+                    status.remove();
+                }
+            }, 3000);
+        }
+
+        // Check if extension is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if the extension toolbar is present
+            setTimeout(() => {
+                const toolbar = document.querySelector('#quick-actions-toolbar');
+                if (toolbar) {
+                    showStatus('Extension loaded successfully!', 'success');
+                } else {
+                    showStatus('Extension not detected. Please check if it\'s loaded.', 'error');
+                }
+            }, 1000);
+        });
+
+        // Add some interactivity to test items
+        document.querySelectorAll('.test-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.style.borderLeftColor = '#4caf50';
+                setTimeout(() => {
+                    item.style.borderLeftColor = '#1a73e8';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

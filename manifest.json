@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Universal Quick Actions",
+  "name": "QuickBeam",
   "version": "1.0.0",
-  "description": "Intelligent text selection tool that recognizes patterns and provides context-sensitive actions",
+  "description": "QuickBeam - Intelligent text selection tool that recognizes patterns and provides context-sensitive actions",
   
   "permissions": [
     "storage",
@@ -28,7 +28,7 @@
   
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Universal Quick Actions"
+    "default_title": "QuickBeam"
   },
   
   "options_page": "options.html",

@@ -1,130 +1,191 @@
-# Universal Quick Actions Chrome Extension
+# QuickBeam Chrome Extension
 
-Intelligent text selection tool that recognizes patterns and provides context-sensitive actions.
+A Chrome extension that provides intelligent text selection tools with context-sensitive actions for addresses, phone numbers, emails, tracking numbers, and more.
 
-## Features
+## 🚀 Current Status: Execution Cycle 3 Complete
 
-- **Smart Pattern Recognition**: Automatically detects addresses, phone numbers, emails, dates, tracking numbers, and more
-- **Context-Sensitive Actions**: Provides relevant actions based on detected patterns
-- **Privacy-First**: Local processing by default, optional cloud features with consent
-- **Customizable**: Extensive preferences and customization options
-- **Fast & Lightweight**: Optimized for performance with <100ms response time
+**Phase 1 - Foundation & MVP**: 75% Complete  
+**Current Phase**: Basic Quick Actions Implementation ✅
 
-## Quick Actions
+### ✅ Completed Features
 
-- 🗺️ **Map It**: Open addresses in Google Maps
-- 📧 **Email**: Compose emails with pre-filled addresses
-- 📞 **Call/Message**: Quick access to communication apps
-- 📦 **Track Package**: Track shipping with major carriers
-- 📅 **Calendar**: Create calendar events from text
-- 🔍 **Search**: Quick web searches
-- 💱 **Convert**: Currency and unit conversion
-- 🌐 **Translate**: Multi-language translation
-- 📚 **Define**: Dictionary lookups
+#### Core Framework (Execution Cycles 1-2)
+- [x] Chrome extension manifest with Manifest V3 compliance
+- [x] TypeScript + Vite build system
+- [x] Content script injection and management
+- [x] Text selection detection with debouncing
+- [x] Intelligent toolbar positioning system
+- [x] Pattern recognition engine for multiple data types
+- [x] Action button system with factory pattern
+- [x] Comprehensive CSS styling with accessibility support
 
-## Development
+#### Basic Quick Actions (Execution Cycle 3)
+- [x] **Map It**: Google Maps integration for addresses
+- [x] **Compose Email**: Email composition for email addresses
+- [x] **Call/Message**: Phone actions for phone numbers
+- [x] **Copy**: Universal copy functionality
+- [x] **Search**: Universal search functionality
+- [x] **Track Package**: Package tracking for carrier numbers
+- [x] **Convert**: Basic conversion actions for currency/units
+- [x] **Translate**: Google Translate integration
+- [x] **Define**: Dictionary lookup functionality
+- [x] **Preferences Page**: Fully functional options page with storage
+
+### 🔄 In Progress
+- [ ] Enhanced pattern recognition accuracy
+- [ ] Performance optimization
+- [ ] Unit testing implementation
+
+### 📋 Upcoming (Execution Cycle 4)
+- [ ] Unit testing for all core functions
+- [ ] Integration testing in Chrome
+- [ ] Bug fixes and performance optimization
+- [ ] Documentation generation
+- [ ] Beta testing preparation
+
+## 🛠️ Installation & Development
 
 ### Prerequisites
-
-- Node.js 20.17+ 
-- npm 10+
+- Node.js 18+ 
+- Chrome browser
+- Git
 
 ### Setup
-
-1. Clone the repository
 ```bash
-git clone https://github.com/universal-quick-actions/extension.git
-cd extension
-```
+# Clone the repository
+git clone <repository-url>
+cd quickbeam
 
-2. Install dependencies
-```bash
+# Install dependencies
 npm install
-```
 
-3. Build the extension
-```bash
+# Build the extension
 npm run build
+
+# For development with watch mode
+npm run dev
 ```
 
-4. Load in Chrome
-   - Open `chrome://extensions/`
-   - Enable "Developer mode"
-   - Click "Load unpacked"
-   - Select the `dist` folder
+### Loading in Chrome
+1. Open Chrome and go to `chrome://extensions/`
+2. Enable "Developer mode"
+3. Click "Load unpacked"
+4. Select the `dist/` folder from the project
+5. The extension should now be active
 
-### Development Commands
+## 🧪 Testing
 
-```bash
-# Development build with watch mode
-npm run build:watch
+### Test Page
+Open `test-extension.html` in Chrome to test all functionality:
 
-# Lint code
-npm run lint
+1. **Address Recognition**: Select addresses to test "Map It" action
+2. **Email Actions**: Select email addresses to test "Compose Email"
+3. **Phone Actions**: Select phone numbers to test "Call/Message"
+4. **Tracking Numbers**: Select tracking numbers to test "Track Package"
+5. **Universal Actions**: Test "Copy" and "Search" on any text
+6. **Preferences**: Test the options page functionality
 
-# Fix linting issues
-npm run lint:fix
+### Testing Instructions
+1. Load the extension in Chrome
+2. Open `test-extension.html`
+3. Select text to see the toolbar appear
+4. Click action buttons to test functionality
+5. Right-click extension icon → Options to test preferences
 
-# Format code
-npm run format
+## 🏗️ Architecture
 
-# Run tests
-npm test
-```
+### Core Components
+- **ContentScriptManager**: Main orchestrator for content scripts
+- **TextSelectionManager**: Handles text selection detection
+- **ToolbarManager**: Manages toolbar UI and positioning
+- **PatternRecognitionEngine**: Detects patterns in selected text
+- **ActionButtonManager**: Manages and executes quick actions
 
-## Project Structure
+### Pattern Recognition
+The extension recognizes:
+- **Addresses**: Street addresses with various formats
+- **Phone Numbers**: International and local formats
+- **Emails**: Standard email address patterns
+- **Tracking Numbers**: UPS, FedEx, USPS, DHL formats
+- **Dates/Times**: Multiple date and time formats
+- **Currency**: Dollar, Euro, Pound, Yen amounts
+- **Units**: Weight, distance, volume, temperature
 
-```
-src/
-├── background/          # Service worker
-├── content/             # Content scripts
-├── popup/               # Extension popup
-├── options/             # Options page
-├── components/          # Reusable UI components
-├── utils/               # Utility functions
-├── types/               # TypeScript interfaces
-└── constants/           # Application constants
-```
+### Action System
+Actions are dynamically generated based on:
+- Detected patterns in selected text
+- User preferences (enabled/disabled actions)
+- Context and relevance
 
-## Architecture
+## ⚙️ Configuration
 
-- **Manifest V3**: Latest Chrome extension standards
-- **TypeScript**: Type-safe development
-- **Vite**: Fast build tooling
-- **ESLint + Prettier**: Code quality and formatting
-- **Husky**: Git hooks for quality assurance
+### User Preferences
+- **Toolbar Settings**: Position, auto-hide, delay
+- **Action Toggles**: Enable/disable specific actions
+- **Privacy Settings**: Local processing, data collection
+- **Appearance**: Theme, compact mode, icons
 
-## Contributing
+### Storage
+- Chrome Storage Sync API for preferences
+- Real-time preference updates across tabs
+- Persistent settings between sessions
+
+## 🔒 Security & Privacy
+
+- **Local Processing**: Pattern detection runs locally
+- **Minimal Permissions**: Only necessary Chrome APIs
+- **No Data Collection**: User data stays local by default
+- **HTTPS Only**: All external API calls use secure connections
+
+## 📊 Performance
+
+- **Toolbar Appearance**: <100ms target
+- **Pattern Detection**: <50ms target
+- **Action Execution**: <200ms target
+- **Memory Usage**: <50MB target
+
+## 🚧 Development Roadmap
+
+### Phase 1: Foundation & MVP (Current)
+- [x] Core architecture and basic actions
+- [ ] Testing and optimization
+- [ ] Beta preparation
+
+### Phase 2: Enhanced Features
+- [ ] Advanced pattern recognition
+- [ ] Additional quick actions
+- [ ] User experience improvements
+
+### Phase 3: Production Release
+- [ ] Chrome Web Store submission
+- [ ] Paid features implementation
+- [ ] Monetization integration
+
+### Phase 4: Growth & Optimization
+- [ ] Performance optimization
+- [ ] Advanced analytics
+- [ ] Enterprise features
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Support
+## 🆘 Support
 
-- 📧 Email: support@universal-quick-actions.com
-- 🐛 Issues: [GitHub Issues](https://github.com/universal-quick-actions/extension/issues)
-- 📖 Documentation: [Wiki](https://github.com/universal-quick-actions/extension/wiki)
+- **Issues**: Report bugs via GitHub Issues
+- **Features**: Request features via GitHub Discussions
+- **Documentation**: Check the docs/ folder for detailed guides
 
-## Roadmap
+---
 
-- [ ] MVP Release (Month 1)
-- [ ] Beta Testing (Month 2-3)
-- [ ] Production Launch (Month 4)
-- [ ] Advanced Features (Month 5+)
-- [ ] Mobile Companion App
-- [ ] Enterprise Features
-
-## Performance Targets
-
-- Toolbar appearance: <100ms
-- Pattern detection: <50ms
-- Memory usage: <50MB
-- Load time: <2s
-- Test coverage: >90%
+**Last Updated**: December 2024  
+**Version**: 1.0.0-alpha  
+**Status**: Active Development

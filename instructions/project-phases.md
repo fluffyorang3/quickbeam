@@ -1,4 +1,4 @@
-# Universal Quick Actions Chrome Extension - AI Agent Execution Phases
+# QuickBeam Chrome Extension - AI Agent Execution Phases
 
 ## Phase 1: Foundation & MVP (Execution Cycles 1-4)
 **Objective**: Establish core extension architecture and basic functionality

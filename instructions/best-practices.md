@@ -1,4 +1,4 @@
-# Universal Quick Actions Chrome Extension - AI Agent Execution Protocols
+# QuickBeam Chrome Extension - AI Agent Execution Protocols
 
 ## Table of Contents
 1. [Computational Standards](#computational-standards)
@@ -25,7 +25,7 @@
 
 ### Project Structure Algorithm
 ```
-quick-beam/
+quickbeam/
 ├── src/
 │   ├── background/          # Service worker (persistent state management)
 │   ├── content/             # Content scripts (DOM interaction)

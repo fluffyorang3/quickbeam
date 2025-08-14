@@ -1,13 +1,13 @@
 // Application constants and configuration
 
-export const EXTENSION_CONFIG = {
-  NAME: 'Universal Quick Actions',
+export const CONSTANTS = {
+  NAME: 'QuickBeam',
   VERSION: '1.0.0',
   DESCRIPTION: 'Intelligent text selection tool that recognizes patterns and provides context-sensitive actions',
-  AUTHOR: 'Universal Quick Actions Team',
-  HOMEPAGE_URL: 'https://github.com/universal-quick-actions',
-  SUPPORT_EMAIL: 'support@universal-quick-actions.com'
-} as const;
+  AUTHOR: 'QuickBeam Team',
+  HOMEPAGE_URL: 'https://github.com/quickbeam',
+  SUPPORT_EMAIL: 'support@quickbeam.com'
+};
 
 export const PERFORMANCE_THRESHOLDS = {
   TOOLBAR_APPEARANCE: 100, // ms
@@ -45,11 +45,13 @@ export const DEFAULT_PREFERENCES: import('../types').UserPreferences = {
     showOnSelection: true
   },
   actions: {
-    enabledActions: ['copy', 'search', 'map_it', 'email', 'call'],
+    enabledActions: ['copy', 'search', 'map_it', 'email', 'call', 'quick_note', 'share'],
     defaultCalendar: 'google',
     preferredCurrency: 'USD',
     preferredUnits: 'metric',
-    translationTarget: 'en'
+    translationTarget: 'en',
+    notePlatform: 'notion',
+    sharePlatform: 'twitter'
   },
   privacy: {
     localProcessingOnly: true,
@@ -61,7 +63,8 @@ export const DEFAULT_PREFERENCES: import('../types').UserPreferences = {
     theme: 'auto',
     compactMode: false,
     showIcons: true,
-    customColors: false
+    customColors: false,
+    largeText: false
   }
 } as const;
 

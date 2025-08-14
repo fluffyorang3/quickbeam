@@ -1,0 +1,148 @@
+/* Quick Actions Toolbar Styles */
+
+.quick-actions-toolbar {
+  position: fixed;
+  z-index: 999999;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  user-select: none;
+  pointer-events: auto;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.quick-actions-toolbar.compact {
+  padding: 6px;
+  font-size: 12px;
+}
+
+.quick-actions-toolbar.dark-theme {
+  background-color: rgba(33, 37, 41, 0.95);
+  border-color: #495057;
+  color: #f8f9fa;
+}
+
+.quick-action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  color: #212529;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-height: 32px;
+}
+
+.quick-action-button:hover {
+  background-color: #e9ecef;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-action-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.quick-action-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.quick-action-button.dark-theme {
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+.quick-action-button.dark-theme:hover {
+  background-color: #6c757d;
+}
+
+.quick-action-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .quick-actions-toolbar {
+    font-size: 12px;
+    padding: 6px;
+  }
+  
+  .quick-action-button {
+    padding: 4px 8px;
+    min-height: 28px;
+  }
+  
+  .quick-action-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Animation for toolbar appearance */
+.quick-actions-toolbar.animate-in {
+  animation: toolbarSlideIn 0.2s ease-out;
+}
+
+@keyframes toolbarSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .quick-actions-toolbar {
+    border-width: 2px;
+    border-color: #000000;
+  }
+  
+  .quick-action-button {
+    border: 1px solid #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .quick-actions-toolbar,
+  .quick-action-button {
+    transition: none;
+  }
+  
+  .quick-action-button:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .quick-actions-toolbar {
+    display: none !important;
+  }
+}
